@@ -66,7 +66,6 @@ test("3초 후에 받아온 나이는 30", async () => {
   const age = await App3.getAge();
   expect(age).toBe(30);
 });
-
 test("3초 후에 받아온 나이는 30", async () => {
   await expect(App3.getAge()).resolves.toBe(30);
 });
