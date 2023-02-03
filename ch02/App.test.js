@@ -1,15 +1,15 @@
 // Matchers
-const App2 = require("./App2");
+const App = require("./App");
 
 // toBe vs. toEqual
 // toBe
 test("2 더하기 3은 5", () => {
-  expect(App2.add(2, 3)).toBe(5);
+  expect(App.add(2, 3)).toBe(5);
 });
 
 // toEqual
 test("2 더하기 3은 5", () => {
-  expect(App2.add(2, 3)).toEqual(5);
+  expect(App.add(2, 3)).toEqual(5);
 });
 
 // toBe로 객체 반환 테스트 코드 작성 => 실패! why?
@@ -25,7 +25,7 @@ test("2 더하기 3은 5", () => {
 
 // 성공!
 test("이름과 나이를 전달받아서 객체를 반환", () => {
-  expect(App2.makeUser("Mike", 30)).toEqual({
+  expect(App.makeUser("Mike", 30)).toEqual({
     name: "Mike",
     age: 30,
   });
@@ -33,21 +33,21 @@ test("이름과 나이를 전달받아서 객체를 반환", () => {
 
 // toEqual vs. toStrictEqual
 test("이름과 나이를 전달받아서 객체를 반환", () => {
-  expect(App2.makeUser("Mike", 30)).toStrictEqual({
+  expect(App.makeUser("Mike", 30)).toStrictEqual({
     name: "Mike",
     age: 30,
   });
 });
 
 // test("이름과 나이를 전달받아서 객체를 반환", () => {
-//   expect(App2.makeUser2("Mike", 30)).toEqual({
+//   expect(App.makeUser2("Mike", 30)).toEqual({
 //     name: "Mike",
 //     age: 30,
 //   });
 // });
 
 // test("이름과 나이를 전달받아서 객체를 반환", () => {
-//   expect(App2.makeUser2("Mike", 30)).toStrictEqual({
+//   expect(App.makeUser2("Mike", 30)).toStrictEqual({
 //     name: "Mike",
 //     age: 30,
 //   });
@@ -71,7 +71,7 @@ test("undefined은 undefined 입니다.", () => {
 });
 
 test("a는 정의된 값입니다.", () => {
-  expect(App2.a).toBeDefined();
+  expect(App.a).toBeDefined();
 });
 
 /* 
@@ -79,19 +79,19 @@ test("a는 정의된 값입니다.", () => {
   toBeFalsy
 */
 test("1은 true 입니다.", () => {
-  expect(App2.add(2, -1)).toBeTruthy();
+  expect(App.add(2, -1)).toBeTruthy();
 });
 
 test("0은 false 입니다.", () => {
-  expect(App2.add(1, -1)).toBeFalsy();
+  expect(App.add(1, -1)).toBeFalsy();
 });
 
 // test("0은 false 입니다.", () => {
-//   expect(App2.add("hello", "world")).toBeFalsy();
+//   expect(App.add("hello", "world")).toBeFalsy();
 // });
 
 test("비어있지 않은 문자열은 true 입니다.", () => {
-  expect(App2.add("hello", "world")).toBeTruthy();
+  expect(App.add("hello", "world")).toBeTruthy();
 });
 
 /* 
@@ -122,10 +122,10 @@ test("비밀번호는 4자리", () => {
 
 // toBeCloseTo (근사값으로 같다)
 // test("0.1 더하기 0.2는 0.3 입니다.", () => {
-//   expect(App2.add(0.1, 0.2)).toBe(0.3);
+//   expect(App.add(0.1, 0.2)).toBe(0.3);
 // });
 test("0.1 더하기 0.2는 0.3 입니다.", () => {
-  expect(App2.add(0.1, 0.2)).toBeCloseTo(0.3);
+  expect(App.add(0.1, 0.2)).toBeCloseTo(0.3);
 });
 
 // toMatch() <= 소괄호 안에는 정규표현식을 넣어 준다.
@@ -158,13 +158,13 @@ test("유저 리스트에 Mike가 있나요?", () => {
 
 // toThrow() => 어떤 에러이든 무조건 반환됨
 test("이거 에러 나나요?", () => {
-  expect(() => App2.throwErr()).toThrow();
+  expect(() => App.throwErr()).toThrow();
 });
 // 특정 에러에만 반환하도록 하려면 ..
 // test("이거 에러 나나요?", () => {
-//   expect(() => App2.throwErr()).toThrow("oo");
+//   expect(() => App.throwErr()).toThrow("oo");
 // });
 // => "oo"가 아닌 "xx"가 반환되었기 때문에 fail됨
 test("이거 에러 나나요?", () => {
-  expect(() => App2.throwErr()).toThrow("xx");
+  expect(() => App.throwErr()).toThrow("xx");
 });

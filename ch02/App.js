@@ -1,4 +1,4 @@
-const App2 = {
+const App = {
   a: 1,
   add: (num1, num2) => num1 + num2,
   makeUser: (name, age) => ({ name, age }),
@@ -10,4 +10,4 @@ const App2 = {
   },
 };
 
-module.exports = App2;
+module.exports = App;
