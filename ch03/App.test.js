@@ -1,17 +1,17 @@
-// const App3 = require("./App3");
+// const App = require("./App");
 
 // test("3초 후에 받아온 이름은 Mike", () => {
 //   function callBack(name) {
 //     expect(name).toBe("Mike");
 //   }
-//   App3.getName(callBack);
+//   App.getName(callBack);
 // });
 
 // test("3초 후에 받아온 이름은 Mike", () => {
 //   function callBack(name) {
 //     expect(name).toBe("Tom");
 //   }
-//   App3.getName(callBack);
+//   App.getName(callBack);
 // });
 // => 통과가 된다고?! 뭔가 이상한데?
 // => 동작 시간도 3초가 안된다고?!
@@ -23,7 +23,7 @@
 //     expect(name).toBe("Mike");
 //     done();
 //   }
-//   App3.getName(callBack);
+//   App.getName(callBack);
 // });
 // done이 호출되기 전까지는 종료되지 않고 기다리게 됨
 
@@ -37,38 +37,38 @@
 //       done();
 //     }
 //   }
-//   App3.getNameWithErr(callBack);
+//   App.getNameWithErr(callBack);
 // });
 
 // Promise를 사용하는 방법 - resolve, reject
 // test("3초 후에 받아온 나이는 30", () => {
-//   App3.getAge().then((age) => {
+//   App.getAge().then((age) => {
 //     expect(age).toBe(30);
 //   });
 // });
 // return을 빼먹으면 그냥 통과해버린다.
 // test("3초 후에 받아온 나이는 30", () => {
-//   return App3.getAge().then((age) => {
+//   return App.getAge().then((age) => {
 //     expect(age).toBe(30);
 //   });
 // });
 
 // Promise를 사용하는 방법 - resolves, rejects matcher 사용
 // test("3초 후에 받아온 나이는 30", () => {
-//   return expect(App3.getAge()).resolves.toBe(30);
+//   return expect(App.getAge()).resolves.toBe(30);
 // });
 // test("3초 후에 에러가 발생합니다.", () => {
-//   return expect(App3.getAgeWithReject()).rejects.toMatch("error");
+//   return expect(App.getAgeWithReject()).rejects.toMatch("error");
 // });
 
 // Async - Await 방식
 // test("3초 후에 받아온 나이는 30", async () => {
-//   const age = await App3.getAge();
+//   const age = await App.getAge();
 //   expect(age).toBe(30);
 // });
 // test("3초 후에 받아온 나이는 30", async () => {
-//   await expect(App3.getAge()).resolves.toBe(30);
+//   await expect(App.getAge()).resolves.toBe(30);
 // });
 // test("3초 후에 에러가 발생합니다.", async () => {
-//   await expect(App3.getAgeWithReject()).rejects.toMatch("error");
+//   await expect(App.getAgeWithReject()).rejects.toMatch("error");
 // });
